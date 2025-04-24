@@ -1,0 +1,616 @@
+
+.container {
+  width: 480px;
+  height: 480px;
+  position: relative;
+  overflow: hidden;
+  background-color: #E6FFE9;
+  animation: background 25s forwards;
+}
+
+.box-1, .box-2, .box-3,
+.box-4, .box-5, .box-6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+
+h1 {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 480px;
+  color: #fff;
+  font-size: 42px;
+  text-align: center;
+  line-height: 480px;
+  animation: title-1 3s 25.5s forwards;
+}
+
+.box-1 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+  animation: fade-out .5s 6s forwards;
+}
+
+p img {
+  width: 100px;
+  height: auto;
+}
+
+.box-1 p {
+  width: 132px;
+  height: 100px;
+  text-align: center;
+  opacity: 0;
+  animation: mountain 4.5s forwards;
+}
+
+.box-2 p {
+  position: relative;
+  margin: 128px auto 0;
+  width: fit-content;
+  height: fit-content;
+  padding: 2px 38px;
+  text-align: center;
+  font-size: 42px;
+  color: #666;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(28px);
+  animation: fun 4s 6.8s forwards;
+}
+
+.box-2 p::before,
+.box-2 p::after {
+    position: absolute;
+    top: 0.8rem;
+    height: 42px;
+    content: '';
+}
+
+.box-2 p::before {
+    border-left: solid 5px;
+    left: 0;
+    transform: rotate(-30deg);
+}
+
+.box-2 p::after {
+    border-right: solid 5px;
+    right: 0;
+    transform: rotate(30deg);
+}
+
+.box-2 img {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(120px);
+  animation: bound-y 4s 8s forwards;
+}
+
+.box-3 .shaker {
+  position: relative;
+  width: 120px;
+  height: 400px;
+  margin: 0 auto;
+  animation: shake 5s 14.3s forwards linear;
+  transform-origin: center top;
+}
+
+.box-3 .shaker::before {
+  position: absolute;
+  top: -20;
+  left: calc(50% - 4px);
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 0;
+  background-color: brown;
+  animation: rope 1s 11s forwards linear;
+}
+
+.box-3 .shadow {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 40px);
+  content: '';
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  background: #999;
+  border-radius: 50%;
+  transform: scaleY(0.6);
+  opacity: 0;
+  animation: shadow 7s 12.6s linear;
+}
+
+.box-3 img {
+  position: absolute;
+  left: calc(50% - 50px);
+  z-index: 1;
+  transform: translateY(-120px);
+  animation: hanger 1.4s 12s forwards;
+}
+
+.box-4 {
+  display: grid;
+  grid-template-columns: 46px 86px 86px 43px 86px 86px 46px;
+  grid-template-rows: 46px 86px 86px 43px 86px 86px 46px;
+  animation: zoom 1.5s 26s forwards ease-in;
+  transform-origin: center;
+}
+.box-4 p {
+  margin: 0;
+}
+.box-4 img {
+  width: 100%;
+  opacity: 0;
+  animation: circle 2s forwards;
+}
+
+.box-5 {
+  width: 0;
+  background-color: #E9FFA5;
+  animation: background-2 1s 28s forwards linear;
+}
+
+.message {
+  opacity: 0;
+  animation: message 1s 29s forwards;
+}
+
+.balloon {
+  position: relative;
+  margin: 120px auto;
+  padding: 8px 24px;
+  width: fit-content;
+  color: #555;
+  font-size: 16px;
+  background: #fff;
+  border-radius: 15px;
+  opacity: 0;
+  transform: translateY(32px);
+  animation: balloon .5s 29.5s forwards;
+}
+
+.balloon:before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-top: 15px solid #fff;
+}
+
+.balloon span {
+  margin: 0;
+  padding: 0;
+}
+
+.message img {
+  position: absolute;
+  top: 230px;
+  left: calc(50% - 50px);
+  animation: thanks 1.5s 30s infinite;
+  transform-origin: bottom;
+}
+.message .shadow {
+  position: absolute;
+  top: 350px;
+  width: 80px;
+  height: 38px;
+  left: calc(50% - 40px);
+  border-radius: 50%;
+  background: #666;
+  animation: shadow-2 1.5s 30s infinite;
+}
+
+/*------- box-1 アニメーション ----------*/
+
+@keyframes mountain {
+  0% {
+    opacity: 0;
+    transform: translateY(-380px) scale(1);
+  }
+  
+  35% {
+    opacity: 1;
+    transform: translateY(0) scale(1, 0.8);
+    transform-origin: top;
+  }
+  36% {
+    opacity: 1;
+    transform: translateY(0) scale(1, 0.7);
+    transform-origin: bottom;
+    transition-timing-function: ease-in;
+  }
+  
+  37.5%{
+    opacity: 1;
+    transform: translateY(-48px) scale(1, 0.9);
+    transform-origin: top;
+    transition-timing-function: ease-in-out;
+  }
+  42.5% {
+    opacity: 1;
+    transform: translateY(-48px) scale(1, 0.8);
+    transform-origin: top;
+    transition-timing-function: ease-in-out;
+  }
+
+  47.5% {
+    opacity: 1;
+    transform: translateY(8px) scale(1, 0.9);
+    transform-origin: bottom;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(8px) scale(1, 0.7);
+    transform-origin: bottom;
+  }
+  
+  52.5% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1, 0.9);
+    transform-origin: bottom;
+  }
+  55% {
+    opacity: 1;
+    transform: translateY(0) scale(1, 0.9);
+    transform-origin: bottom;
+  }
+  57.5%, 97.5% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transform-origin: bottom;
+  }
+  
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.box-1 p:first-child {
+  animation-delay: .5s;
+}
+
+.box-1 p:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.box-1 p:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.box-1 p:nth-child(4) {
+  animation-delay: 2s;
+}
+
+.box-1 p:nth-child(5) {
+  animation-delay: 2.5s;
+}
+
+.box-1 p:last-child {
+  width: 100%;
+  height: 100px;
+  animation-delay: 3s;
+}
+
+/*------- box-2 アニメーション ----------*/
+
+@keyframes bound-y {
+  0% {
+    transform: translate(0, 120px) scale(1, 1);
+    transition-timing-function: ease-in;
+  }
+  20% {
+    transform: translate(60px, -380px) scale(1, 0.8);
+  }
+  21% {
+    transform: translate(60px, -380px) scale(1);
+    transform-origin: top;
+    transition-timing-function: ease-in;
+  }
+  40% {
+    transform: translate(160px, 0) scale(1, 0.8);
+    transition-timing-function: ease-in;
+  }
+  41% {
+    transform: translate(160px, 0) scale(1, 1);
+    transition-timing-function: ease-in;
+  }
+  60% {
+    transform: translate(280px, -380px) scale(1, 0.8);
+    transition-timing-function: ease-in;
+  }
+  61% {
+    transform: translate(280px, -380px) scale(1, 1);
+    transition-timing-function: ease-in;
+  }
+  80% {
+    transform: translate(360px, 0) scale(1, 0.8);
+    transition-timing-function: ease-in;
+  }
+  81% {
+    transform: translate(360px, 0) scale(1, 1);
+    transition-timing-function: ease-in;
+  }
+  100% {
+    transform: translate(600px, -520px) scale(1);
+    transition-timing-function: ease-in;
+  }
+}
+
+/*------- box-3 アニメーション ----------*/
+
+@keyframes rope {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 300px;
+  }
+}
+
+@keyframes hanger {
+  0% {
+    transform: translateY(-120px);
+  }
+  100% {
+    transform: translateY(280px);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0) scaleX(1);
+  }
+  20% {
+    transform: rotate(-90deg) scaleX(1);
+  }
+  40% {
+    transform: rotate(0) scaleX(0.8);
+  }
+  60% {
+    transform: rotate(90deg) scaleX(1);
+  }
+  80% {
+    transform: rotate(0) scaleX(0.8);
+  }
+  100% {
+    transform: rotate(-180deg) scaleX(1);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    opacity: 0;
+    transform: translate(0) scale(0);
+  }
+  10%, 26% {
+    opacity: 1;
+    transform: translate(0) scale(1, 0.5);
+  }
+  30%, 40%{
+    opacity: 1;
+    transform: translate(200px, 0) scale(0);
+  }
+  56% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1, 0.5);
+  }
+  60%, 70% {
+    opacity: 1;
+    transform: translate(-200px, 0) scale(0);
+  }
+  84% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1, 0.5);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(200px, 0) scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(200px, 0) scale(0);
+  }
+}
+
+/*------- box-4 アニメーション ----------*/
+
+@keyframes circle {
+  0% {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  40% {
+    opacity: 1;
+    transform: rotateY(360deg);
+  }
+  41%, 100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.box-4 p:nth-child(12) img {
+  animation-delay: 20s;
+}
+
+.box-4 p:nth-child(20) img {
+  animation-delay: 20.5s;
+}
+.box-4 p:nth-child(34) img {
+  animation-delay: 21s;
+}
+.box-4 p:nth-child(40) img {
+  animation-delay: 21.5s;
+}
+.box-4 p:nth-child(38) img {
+  animation-delay: 22s;
+}
+.box-4 p:nth-child(30) img {
+  animation-delay: 22.5s;
+}
+.box-4 p:nth-child(16) img {
+  animation-delay: 23s;
+}
+.box-4 p:nth-child(10) img {
+  animation-delay: 23.5s;
+}
+
+@keyframes zoom {
+  0%{
+    opacity: 1;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+}
+
+/*------- FUN アニメーション ----------*/
+
+@keyframes fun {
+  0% {
+    opacity:0;
+    transform: translateY(28px);
+  }
+  15%, 97.5% {
+    opacity:1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*------- CSS ANIMATION アニメーション ----------*/
+
+@keyframes title-1 {
+  from {
+    opacity: 1;
+    color: #fff;
+  }
+  40%, 80% {
+    opacity: 1;
+    color: #666;
+  }
+  to {
+    opacity: 0;
+    color: #666;
+  }
+  
+}
+
+/*------- 背景 アニメーション ----------*/
+
+@keyframes background {
+  0%{
+    background-color: #E6FFE9;
+  }
+  25% {
+    /* background-color: #FFBEDA; */
+    background-color: #FFFFAA;
+  }
+  50% {
+    background-color: #FFBEDA;
+    /* background-color: #FFFFAA; */
+  }
+  75% {
+    background-color: #D9E5FF;
+  }
+  100% {
+    background-color: #FFD5EC;
+  }
+}
+
+
+/*------- box-5 アニメーション ----------*/
+
+@keyframes background-2 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes message {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes balloon {
+  0% {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes thanks {
+  0% {
+    transform: none;
+  }
+  
+  50% {
+    transform: translateY(-24px) scale(1, 0.9);
+  }
+
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes shadow-2 {
+  0% {
+    transform: none;
+  }
+  
+  50% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.license {
+  width: 480px;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
