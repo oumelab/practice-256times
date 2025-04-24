@@ -1,4 +1,4 @@
-// 右の仕様を満たすように p5.js を使って実装してみましょう
+// この作品は 256times - https://256times.com/ で制作されました。
 let mode = "pen";
 let prev;
 const canvasWidth = 640;
