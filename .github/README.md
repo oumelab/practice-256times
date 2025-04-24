@@ -12,6 +12,9 @@ CSSアニメーションでキャラクターに動きをつける<br>
 - [自由制作](https://github.com/oumelab/practice-256times/tree/main/p5js-interactions) : p5.js インタラクション編 - 2022/12/25<br>
 オリジナルお絵描きツールの制作
 
+- [案件修行作品](https://github.com/oumelab/practice-256times/tree/main/dummy-data-generator) : Webアプリ案件修行 ダミーデータジェネレータ編 - 2023/06/09<br>
+ダミーデータジェネレータ<br>
+※タイトルロゴ画像は [256times] の提供です。
 
 **これらの作品はすべて [256times] で制作されました。**
 
