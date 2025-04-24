@@ -1,0 +1,48 @@
+<!-- これまでのコードをここに貼り付けて制作を進めましょう -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>クリックでダミーデータを生成&#65372;Dummy Data Generator</title>
+  <!-- Google Fonts (BIZ UDPGothic Regular, Bold) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;display=swap" rel="stylesheet">
+  <!-- CSSを読み込むため、以下のタグは削除しないでください -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- このHTMLファイルは自由に編集していただいて構いません -->
+  
+  <div class="controls">
+    <form action="" id="form">
+      <div class="option">
+          <fieldset>
+            <legend><span>生成データ数</span></legend>
+            <input id="item_1" type="radio" name="num" value="10" checked><label for="item_1">10</label>
+            <input id="item_2" type="radio" name="num" value="20"><label for="item_2">20</label>
+            <input id="item_3" type="radio" name="num" value="30"><label for="item_3">30</label>
+            <input id="item_4" type="number" name="free" min="5" max="100" placeholder="5〜100">
+          </fieldset>
+        </div>
+      <p><button id="btn"><span>生成する</span></button></p>
+    </form>
+    <div class="copy">
+      <small>&copy; ニゴロシステム.</small>
+    </div>
+  </div>
+    <header class="content">
+      <h1>
+          <img src="logo.png" width="480" alt="Dummy Data Generator">
+          <!-- ロゴ画像提供： 256times https://256times.com -->
+      </h1>
+      <p>クリックでダミーデータを生成！</p>
+    </header>
+    <main class="content">
+      <div id="names">
+      </div>
+    </main>
+  <script src="js/main.js"></script>
+</body>
+</html>

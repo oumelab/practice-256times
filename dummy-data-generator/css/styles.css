@@ -1,0 +1,272 @@
+@charset 'utf-8';
+/* これまでのコードを貼り付けて制作を進めましょう */
+/* 自由に記述してかまいません */
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+  
+  img {
+    vertical-align: bottom;
+  }
+  
+  body {
+    background: #fff;
+    font-family: 'BIZ UDPGothic', sans-serif;
+    line-height: 1.6;
+    color: #666;
+  }
+  
+  .content {
+    padding: 0.8rem;
+    margin-bottom: 1.6rem;
+  }
+  
+  header {
+    padding-bottom: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+  }
+  h1 {
+    width: 90%;
+    max-width: 348px;
+  }
+  
+  h1 img {
+    width: 100%;
+  }
+  
+  main {
+    width: 100%;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  main.content {
+    margin-bottom: 12rem;;
+  }
+ 
+  /* オプション・ボタン */
+  .controls {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    column-gap: 0.8rem;
+    border-radius: 0.4rem;
+    background: rgba(255, 255, 255, .8);
+    padding: 0.4rem 0.8rem 0.8rem;
+    width: 100%;
+    max-width: 560px;
+  }
+  
+  .option legend,
+  input[type=text] {
+    display: contents;
+    font-size: 0.9rem;
+  }
+  legend span {
+    display: inline-block;
+    padding-right: 0.1rem;
+  }
+  
+  fieldset {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.6rem;
+    align-items: center;
+    margin: 0.4rem 0 0.6rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #ccc;
+  }
+  input[type=radio] {
+    clip: rect(1px 1px 1px 1px);
+    position: absolute;
+  }
+  label,
+  input[type=number] {
+    display: inline-block;
+    padding: 0.3rem 0;
+    text-align: center;
+    transition: all .2s;
+    border: 1px solid #ccc;
+    background: #eee;
+    border-radius: 0.2rem;
+    color: #333;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  
+  input:checked + label,
+  input:focus + label {
+    background: #bbb;
+    border-color: #999;
+    color: #333;
+    font-weight: bold;
+    border-radius: 0.2rem;
+  }
+
+  input:checked + label.checked::before {
+    display: inline-block;
+    content: '\F26E';
+    font-family: bootstrap-icons;
+    font-weight: 400;
+    font-size: 1.1rem;
+    line-height: 1;
+    vertical-align: middle;
+    margin-right: 0.1rem;
+  }
+  
+  input[type=number] {
+    cursor: default;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    padding: 0.39rem 0.2rem;
+    font-size: 0.95rem;
+    line-height: normal;
+    background: #fff;
+    border: 1px solid #ccc;
+    z-index: 10;
+  }
+
+  input[type=number]:focus,
+  input:checked + label {
+    outline: #666 solid 2px;
+  }
+  
+  button {
+    all: unset;
+    cursor: pointer;
+    background: #29B17D;
+    color: #fff;
+    border: 1px solid #129647;
+    border-radius: 0.4rem;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.8rem 0;
+    width: 100%;
+    line-height: 1;
+    letter-spacing: 1px;
+    transition: background .3s;
+  }
+  
+  button:hover {
+    background: #129647;
+  }
+  
+  button:active {
+    opacity: .2;
+  }
+
+
+  button span::before {
+    display: inline-block;
+    content: '\F544';
+    color: #fff;
+    font-family: bootstrap-icons;
+    font-weight: 400;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    margin-right: 0.8rem;
+  }
+
+  /*** データ表示 ***/
+  .units {
+    font-size: 0.84rem;
+    margin-left: 0.1rem;
+  }
+  .total {
+    text-align: right;
+    width: fit-content;
+    margin-left: auto;
+    padding: 0.4rem 0.8rem;
+    margin-bottom: 1.6rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid #f6c3af;
+    border-radius: 5px;
+    color: #333;
+  }
+  .total small {
+    display: inline-block;
+    color: #535150;
+    margin-right: 0.8rem;
+  }
+  #names {
+    width: 100%;
+  }
+  #names dl {
+    display: grid;
+    grid-template-columns: 10% 35% 33% 22%;
+    border-bottom: 2px solid #fff;
+    background: #f8f8f8;
+  }
+  
+  #names dl dt,
+  #names dl dd {
+    padding: 0.6rem 0;
+    text-align: center;
+    border-right: 2px solid #fff;
+    font-size: 0.9rem;
+  }
+  #names dl:nth-child(odd) {
+    background: #eee;
+  }
+  #names dl:last-of-type {
+    border-bottom-left-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+  }
+  #names dl dd:last-of-type {
+    border-right: none;
+  }
+  .pay {
+    display: inline-block;
+    text-align: right;
+    width: 5.6rem;
+  }
+  .pertotal {
+    display: inline-block;
+    text-align: right;
+    width: 4.1rem;
+  }
+
+  #names dl.title {
+    background: #444;
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    font-size: 0.9rem;
+    color: #fff;
+  }
+  #names dl.title dd::before {
+    display: inline-block;
+    content: '\F4DA';
+    font-family: bootstrap-icons;
+    font-weight: 400;
+    font-size: 1.1rem;
+    vertical-align: middle;
+    margin-right: 0.4rem;
+    margin-top: -0.2rem;
+  }
+  #names dl.title dd:nth-of-type(2)::before {
+    content: '\F63A';
+  }
+  #names dl.title dd:last-of-type::before {
+    content: '\F4D1';
+  }
+  
+  .copy {
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1.2rem 0 0.2rem;
+  }
