@@ -137,7 +137,6 @@
             items[i].nextSibling.classList.remove('checked');
           }
           num = item.value;
-          console.log(num);
         }
       } else {
       item.nextSibling.classList.remove('checked');
